@@ -19,11 +19,12 @@ module Enumerable
     i = 0
     result = []
     self.my_each do |x|
-      if yield(self[i])
-        result[i] = self[i]
+      if yield(x)
+        result[i] = x
         i += 1
       end
     end
+    return result
   end
 end
 
