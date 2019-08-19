@@ -54,8 +54,8 @@ module Enumerable
     return test
   end
 
-  #my_count?: clone of count?
-  def my_count?
+  #my_count: clone of count
+  def my_count
     counter = 0
     self.my_each do |x|
       counter += 1 if yield(x)
