@@ -35,6 +35,15 @@ module Enumerable
     end
     return test
   end
+
+  #my_any?: clone of any?
+  def my_any?
+    test = false
+    self.my_each do |x|
+      test = test || yield(x)
+    end
+    return test
+  end
 end
 
 # Methods Practice
@@ -54,5 +63,9 @@ arr.my_select do |value|
 end
 
 arr.my_all? do |x|
+  x.odd?
+end
+
+arr.my_any? do |x|
   x.odd?
 end
