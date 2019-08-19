@@ -52,3 +52,7 @@ end
 arr.my_select do |value|
   value.odd?
 end
+
+arr.my_all? do |x|
+  x.odd?
+end
