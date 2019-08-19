@@ -62,4 +62,11 @@ module Enumerable
     end
     return counter
   end
+
+  #my_map: clone of map
+  def my_map
+    self.my_each do |x|
+      x = yield(x)
+    end
+  end
 end
