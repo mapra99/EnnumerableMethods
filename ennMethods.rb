@@ -26,6 +26,15 @@ module Enumerable
     end
     return result
   end
+
+  #my_all?: clone of all?
+  def my_all?
+    test = true
+    self.my_each do |x|
+      test = test && yield(x)
+    end
+    return test
+  end
 end
 
 # Methods Practice
