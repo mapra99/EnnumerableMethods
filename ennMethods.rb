@@ -44,6 +44,15 @@ module Enumerable
     end
     return test
   end
+
+  #my_none?: clone of none?
+  def my_none?
+    test = true
+    self.my_each do |x|
+      test = test || !yield(x)
+    end
+    return test
+  end
 end
 
 # Methods Practice
