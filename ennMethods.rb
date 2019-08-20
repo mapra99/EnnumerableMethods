@@ -70,13 +70,16 @@ module Enumerable
     end
   end
 
-  #my_map: clone of map
+  #my_inject: clone of inject
   def my_inject
     result = self[0]
     (1...self.length-1).my_each do |i|
       result = yield(result, self[i])
     end
+
+    return result
   end
+
 
 
 end
