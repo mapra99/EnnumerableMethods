@@ -79,7 +79,4 @@ module Enumerable
 
     return result
   end
-
-
-
 end
