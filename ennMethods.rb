@@ -69,4 +69,14 @@ module Enumerable
       x = yield(x)
     end
   end
+
+  #my_map: clone of map
+  def my_inject
+    result = self[0]
+    (1...self.length-1).my_each do |i|
+      result = yield(result, self[i])
+    end
+  end
+
+
 end
