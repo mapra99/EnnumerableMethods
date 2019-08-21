@@ -89,3 +89,6 @@ arr.my_map_v2(p)
 arr.my_inject do |x, y|
   x*y
 end
+
+#Using multiply_els
+multiply_els(arr)
