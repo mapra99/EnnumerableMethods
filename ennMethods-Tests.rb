@@ -16,10 +16,11 @@ arr.my_each_with_index do |x, index|
 end
 #OK
 
-
-arr.my_select do |value|
+#Using my_select
+r = arr.select do |value|
   value.odd?
 end
+puts r
 
 arr.my_all? do |x|
   x.odd?
