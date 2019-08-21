@@ -13,6 +13,7 @@ module Enumerable
     for i in 0...self.length do
       yield(self[i], i)
     end
+    return self
   end
 
   #my_select: clone of select
