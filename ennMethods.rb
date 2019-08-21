@@ -82,8 +82,6 @@ module Enumerable
     return self
   end
 
-  
-
   #my_inject: clone of inject
   def my_inject
     result = self[0]
