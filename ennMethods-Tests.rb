@@ -8,6 +8,14 @@ arr.my_each do |x|
 end
 #OK
 
+#Using my_each_with_index
+a = 0
+arr.my_each_with_index do |x, index|
+  a = a + x*index
+  puts a
+end
+#OK
+
 arr.my_each_with_index do |x, index|
   puts "value: #{x} with index: #{index}"
 end
