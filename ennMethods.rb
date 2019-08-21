@@ -64,12 +64,22 @@ module Enumerable
   end
 
   #my_map: clone of map
-  def my_map    
+  def my_map_v1    
     (0...self.length).each do |i|
       self[i] = yield(self[i])
     end
     return self
   end
+
+  def my_map_v2(proc)   
+    (0...self.length).each do |i|
+      self[i] = proc.call self[i] if proc != nil
+      self[i] = yield(self[i]) if proc == nil
+    end
+    return self
+  end
+
+  
 
   #my_inject: clone of inject
   def my_inject
