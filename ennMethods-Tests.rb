@@ -63,5 +63,24 @@ arr.my_count do |x|
 end
 #OK
 
+#Using my_map_v1 (with only blocks)
+newArr = arr.my_map_v1 do |x|
+  x*1
+end
+puts newArr
+#OK
 
+#Using my_map_v2 (either block or procedure)
+#WITH BLOCK
+arr.my_map_v2 do |x|
+  x*1
+end
+#OK
 
+#WITH PROC
+p = lambda do |x|
+  x*1
+end
+
+arr.my_map_v2(p)
+#OK
