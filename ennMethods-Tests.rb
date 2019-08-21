@@ -53,4 +53,15 @@ arr.my_none? do |x|
 end
 #OK
 
+#Using my_count
+arr.my_count do |x|
+  x.odd?
+end
+#OK
+arr.my_count do |x|
+  x < 1
+end
+#OK
+
+
 
