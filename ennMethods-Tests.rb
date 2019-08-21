@@ -16,9 +16,6 @@ arr.my_each_with_index do |x, index|
 end
 #OK
 
-arr.my_each_with_index do |x, index|
-  puts "value: #{x} with index: #{index}"
-end
 
 arr.my_select do |value|
   value.odd?
