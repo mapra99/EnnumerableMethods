@@ -71,6 +71,7 @@ module Enumerable
     return self
   end
 
+  #my_map_v2: clone of map. Accepts both procedures and blocks
   def my_map_v2(proc = nil)   
     (0...self.length).each do |i|
       self[i] = proc.call self[i] if proc != nil
