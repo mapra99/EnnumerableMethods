@@ -42,3 +42,15 @@ arr.my_any? do |x|
   x < 1
 end
 #OK
+
+#Using my_none?
+arr.my_none? do |x|
+  x.odd?
+end
+#OK
+arr.my_none? do |x|
+  x < 1
+end
+#OK
+
+
