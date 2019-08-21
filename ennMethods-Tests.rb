@@ -33,7 +33,12 @@ arr.my_all? do |x|
 end
 #OK
 
-
+#Using my_any?
 arr.my_any? do |x|
   x.odd?
 end
+#OK
+arr.my_any? do |x|
+  x < 1
+end
+#OK
