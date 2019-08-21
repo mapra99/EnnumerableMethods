@@ -73,7 +73,7 @@ module Enumerable
   #my_inject: clone of inject
   def my_inject
     result = self[0]
-    (1...self.length).each do |i|
+    (1...self.length).my_each do |i|
       result = yield(result, self[i])
     end
 
