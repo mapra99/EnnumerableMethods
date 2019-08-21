@@ -2,8 +2,8 @@
 module Enumerable
   #my_each: clone of each
   def my_each
-    for i in 0...self.length do
-      yield(self[i])
+    for x in self do
+      yield(x)
     end
     return self
   end

@@ -84,3 +84,8 @@ end
 
 arr.my_map_v2(p)
 #OK
+
+#Using my_inject
+arr.my_inject do |x, y|
+  x*y
+end
