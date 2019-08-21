@@ -21,10 +21,18 @@ r = arr.select do |value|
   value.odd?
 end
 puts r
+#OK
 
+#Using my_all?
 arr.my_all? do |x|
   x.odd?
 end
+#OK
+arr.my_all? do |x|
+  x > 0
+end
+#OK
+
 
 arr.my_any? do |x|
   x.odd?
