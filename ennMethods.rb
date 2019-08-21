@@ -71,7 +71,7 @@ module Enumerable
     return self
   end
 
-  def my_map_v2(proc)   
+  def my_map_v2(proc = nil)   
     (0...self.length).each do |i|
       self[i] = proc.call self[i] if proc != nil
       self[i] = yield(self[i]) if proc == nil
