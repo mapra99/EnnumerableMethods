@@ -81,3 +81,10 @@ module Enumerable
   end
 end
 
+def multiply_els(arr)
+  include Al
+  arr.my_inject do |elem, n|
+    elem*n
+  end
+end
+
