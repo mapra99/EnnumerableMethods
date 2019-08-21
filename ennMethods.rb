@@ -64,10 +64,11 @@ module Enumerable
   end
 
   #my_map: clone of map
-  def my_map
-    self.my_each do |x|
-      x = yield(x)
+  def my_map    
+    (0...self.length).each do |i|
+      self[i] = yield(self[i])
     end
+    return self
   end
 
   #my_inject: clone of inject
