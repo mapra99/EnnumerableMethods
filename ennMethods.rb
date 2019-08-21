@@ -5,6 +5,7 @@ module Enumerable
     for i in 0...self.length do
       yield(self[i])
     end
+    return self
   end
 
   #my_each_with_index: clone of each.with_index
@@ -99,5 +100,3 @@ def multiply_els(arr)
     elem*n
   end
 end
-
-multiply_els([2,3,2])

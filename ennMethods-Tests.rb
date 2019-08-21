@@ -2,9 +2,11 @@
 include Enumerable
 arr = [1,5,84,2,4,1,6,5,8]
 
+#Using my_each
 arr.my_each do |x|
-  puts x
+  print x if x%2 == 0
 end
+
 
 arr.my_each_with_index do |x, index|
   puts "value: #{x} with index: #{index}"
