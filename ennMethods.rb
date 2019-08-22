@@ -72,10 +72,22 @@ module Enumerable
   end
 
   #my_none?: clone of none?
-  def my_none?
+  def my_none?(pattern = nil)
     test = true
-    self.my_each do |x|
-      test = test && !yield(x)
+    if (block_given?)
+      self.my_each do |x|
+        test = test && !yield(x)
+      end
+    else
+      if(pattern.nil?)
+        self.my_each do |x|
+          test = test && (x==false)
+        end
+      else
+        self.my_each do |x|
+          test = test && !x.match?(pattern)
+        end
+      end
     end
     return test
   end
