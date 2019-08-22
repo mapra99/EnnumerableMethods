@@ -51,15 +51,21 @@ module Enumerable
   end
 
   #my_any?: clone of any?
-  def my_any?
+  def my_any?(pattern = nil)
     test = false
     if(block_given)
       self.my_each do |x|
         test = test || yield(x)
       end
     else
-      self.my_each do |x|
-        test = test || (x == true)
+      if(pattern.nil?)
+        self.my_each do |x|
+          test = test || (x == true)
+        end
+      else
+        self.my_each do |x|
+          test = test || (x.match?(pattern))
+        end
       end
     end
     return test
