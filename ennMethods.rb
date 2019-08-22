@@ -37,8 +37,14 @@ module Enumerable
         test = test && yield(x)
       end 
     else
-      self.my_each do |x|
-        test = test && (x==true)
+      if(pattern.nil?)
+        self.my_each do |x|
+          test = test && (x==true)
+        end
+      else
+        self.my_each do |x|
+          test = test && (x.match?(pattern))
+        end
       end
     end
     return test
