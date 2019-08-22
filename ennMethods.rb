@@ -82,11 +82,16 @@ module Enumerable
 
   #my_count: clone of count
   def my_count
-    counter = 0
-    self.my_each do |x|
-      counter += 1 if yield(x)
+    if(block_given?)
+      counter = 0
+      self.my_each do |x|
+        counter += 1 if yield(x)
+      end
+      return counter
+    else
+      return self.length
     end
-    return counter
+    
   end
 
   #my_map: clone of map
