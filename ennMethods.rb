@@ -120,12 +120,12 @@ module Enumerable
   end
 
   #my_inject: clone of inject
-  def my_inject
-    result = self[0]
-    (1...self.length).my_each do |i|
-      result = yield(result, self[i])
+  def my_inject(val = nil)
+    result = self.first
+    (1...self.entries.length).my_each do |i|
+      result = yield(result, self.entries[i])
     end
-
+    result = yield(result, val) if !val.nil?
     return result
   end
 end
