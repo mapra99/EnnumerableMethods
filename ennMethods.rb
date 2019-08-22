@@ -30,10 +30,16 @@ module Enumerable
   end
 
   #my_all?: clone of all?
-  def my_all?
+  def my_all?(pattern = nil)
     test = true
-    self.my_each do |x|
-      test = test && yield(x)
+    if(block_given?)
+      self.my_each do |x|
+        test = test && yield(x)
+      end 
+    else
+      self.my_each do |x|
+        test = test && (x==true)
+      end
     end
     return test
   end
