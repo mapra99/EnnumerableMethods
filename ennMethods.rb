@@ -106,7 +106,7 @@ module Enumerable
       else
         counter = 0
         self.my_each do |x|
-          counter += 1 if x.match?(pattern)
+          counter += 1 if x == pattern
         end
         return counter
       end
