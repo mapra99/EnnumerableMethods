@@ -53,7 +53,7 @@ module Enumerable
   #my_any?: clone of any?
   def my_any?(pattern = nil)
     test = false
-    if(block_given)
+    if(block_given?)
       self.my_each do |x|
         test = test || yield(x)
       end
