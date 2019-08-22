@@ -75,7 +75,7 @@ module Enumerable
   def my_none?
     test = true
     self.my_each do |x|
-      test = test || !yield(x)
+      test = test && !yield(x)
     end
     return test
   end
