@@ -81,7 +81,7 @@ module Enumerable
   end
 
   #my_count: clone of count
-  def my_count
+  def my_count(pattern = nil)
     if(block_given?)
       counter = 0
       self.my_each do |x|
@@ -89,7 +89,15 @@ module Enumerable
       end
       return counter
     else
-      return self.length
+      if(pattern.nil?)
+        return self.length 
+      else
+        counter = 0
+        self.my_each do |x|
+          counter += 1 if x.match?(pattern)
+        end
+        return counter
+      end
     end
     
   end
